@@ -33,11 +33,11 @@ The objective is to dynamically map medical products across terminologies and re
 - Create an OCI OpenSearch cluster using the VCM created above as per this [documentation](https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Tasks/creatingsearchclusters.htm).
 
 ## 3. Import data from source
-- Federal Drug Administration
-https://open.fda.gov/
+- Europe - [European Medecines Agency](https://www.ema.europa.eu/en/homepage)
+- Austria - [Austrian medicinal product index](https://aspregister.basg.gv.at/aspregister/faces/aspregister.jspx)
+- Belgium - [Medicinal products for human use | Medicinal product database](https://medicinesdatabase.be/human-use)
+- USA - [Federal Drug Administration](https://open.fda.gov/)
 
-- European Medecines Agency
-https://www.ema.europa.eu/en/homepage 
   
 ## 4. Data Model
 
