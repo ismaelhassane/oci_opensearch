@@ -1,0 +1,9 @@
+streamlit==1.32.2
+requests==2.31.0
+pandas==2.2.1
+transformers==4.39.3
+torch==2.2.2
+sentence-transformers==2.6.1
+opensearch-py==2.4.2
+tqdm==4.66.2
+python-dotenv==1.0.1
