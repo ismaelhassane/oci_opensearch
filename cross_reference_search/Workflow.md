@@ -9,9 +9,6 @@ This project enables semantic search using DistilRoBERTa and keyword-based filte
 
 ---
 
-
----
-
 ## Setup Instructions
 
 1. **Install Dependencies**
@@ -52,12 +49,13 @@ curl -u 'USERNAME:PASSWORD' -X POST "<OPENSEARCH_EU_URL>/_bulk" -H "Content-Type
 
 ---
 
-## 🔎 Index Configuration (Dev Tools)
+## Index Configuration (Dev Tools)
 
 Performed in OpenSearch Dev Tools:
 
-## create europe_dataset index mappings
-```json
+## Create europe_dataset index mappings
+
+```bash
 PUT europe_dataset
 {
   "mappings": {
@@ -73,8 +71,8 @@ PUT europe_dataset
   }
 }
 ```
-## reindex austria_dataset
-```json
+## Reindex austria_dataset
+```bash
 POST _reindex?requests_per_second=1000
 {
   "source": {
@@ -118,8 +116,8 @@ POST _reindex?requests_per_second=1000
   }
 }
 ```
-## reindex belgium_dataset
-```json
+## Reindex belgium_dataset
+```bash
 POST _reindex?requests_per_second=1000
 {
   "source": {
@@ -158,9 +156,9 @@ POST _reindex?requests_per_second=1000
 }
 ```
 ## Creating a new index for with new mappings
-## A text field → for full-text search
-## A keyword subfield → for exact matching and filters
-```json
+A text field → for full-text search
+A keyword subfield → for exact matching and filters
+```bash
 PUT europe_dataset_v2_reindexed
 {
   "settings": {
@@ -248,9 +246,9 @@ POST _reindex
   }
 }
 ```
-## US Data - filtered with relevant fields 
+## US Data - Filtered with relevant fields 
 
-```json
+```bash
 PUT /usa_dataset
 {
   "settings": {
@@ -285,8 +283,8 @@ PUT /usa_dataset
 }
 ```
 
-## reindex usa_dataset
-```json
+## Reindex usa_dataset
+```bash
 POST _reindex?requests_per_second=1000
 {
   "source": {
@@ -330,7 +328,7 @@ POST _reindex?requests_per_second=1000
 ```
 
 ## Reindex if only openfda exists in document
-```json
+```bash
 POST _reindex
 {
   "source": {
@@ -347,7 +345,7 @@ POST _reindex
 }
 ```
 ## For semantic search, create combined_text field
-```json
+```bash
 PUT _ingest/pipeline/combine-text-pipeline_test
 {
   "description": "Combine fields for semantic search embedding using SapBERT",
@@ -395,8 +393,8 @@ POST _reindex
 }
 
 ```
-## Also used to create the `knn_vector` index for US embeddings:
-```json
+## Mapping for index to include knn_vector field
+```bash
 PUT usa_dataset_filtered_embeddings_generic
 {
   "settings": {
