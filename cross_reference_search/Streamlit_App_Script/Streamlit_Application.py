@@ -62,8 +62,7 @@ with tab1:
                                 "query": keyword,
                                 "fields": [
                                     "Medicine name^4",
-                                    "ATC code^2",
-                                    "ATC code.keyword^3",
+                                    "ATC code.keyword^2",
                                     "Active substance^3"
                                 ]
                             }
@@ -72,7 +71,7 @@ with tab1:
                             "wildcard": {
                                 "ATC code.keyword": {
                                     "value": f"{keyword.upper()}*",
-                                    "boost": 5
+                                    "boost": 2
                                 }
                             }
                         }
